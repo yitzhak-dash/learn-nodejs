@@ -2,4 +2,5 @@
 
 ## First-class function and function expression:
 ## Module (`require(...)`, `module.exports = ...`)
-## Name/value pair
+## Object as collection of Name/value pairs.
+## Prototypal Inheritance.
