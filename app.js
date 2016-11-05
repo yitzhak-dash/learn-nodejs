@@ -1,27 +1,11 @@
-function print(str) {
-    console.log(str);
-}
+var name = 'Jane';
 
-/**
- * Constructor function
- * @param firstName
- * @param lastName
- * @constructor
- */
-function Person(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-}
+//IIFE
+(function () {
+    var name = 'John';
+    console.log(name);
+}());
 
-Person.prototype.greet = function () {
-    console.log('Hello ' + this.firstName + ' ' + this.lastName);
-};
+console.log(name);
 
-var john = new Person('John', 'Doe');
-john.greet();
 
-var jane = new Person('Jane', 'Doe');
-jane.greet();
-
-print(john.__proto__);
-print(jane.__proto__);
