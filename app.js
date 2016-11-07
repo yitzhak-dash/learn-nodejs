@@ -1,11 +1,4 @@
-var name = 'Jane';
+var greet = require('./greet');
 
-//IIFE
-(function () {
-    var name = 'John';
-    console.log(name);
-}());
-
-console.log(name);
-
-
+greet.english();
+greet.spanish();
