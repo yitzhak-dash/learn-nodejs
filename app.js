@@ -8,14 +8,14 @@ function Greetr() {
 // all object that created from Greetr will be have all props and methods of EventEmitter.
 util.inherits(Greetr, EventEmitter);
 
-Greetr.prototype.greet = function () {
-    console.log('Bill said Monica');
-    this.emit('greet');
+Greetr.prototype.greet = function (data) {
+    console.log('Bill said Monica and ' + data);
+    this.emit('greet', data);
 };
 
 var greeter = new Greetr();
-greeter.on('greet', function () {
-    console.log("Here's Monica");
+greeter.on('greet', function (data) {
+    console.log("Here's Monica. She's going " + data);
 });
 
-greeter.greet();
+greeter.greet('Zed');
