@@ -7,9 +7,16 @@ var listener1 = function () {
     console.log("Someone, somewhere said Nyu");
 };
 
-emitter.on('nyu', listener1());
+function listener2() {
+    console.log("Know your enemy");
+}
+
+emitter.on('nyu', listener1);
+emitter.on('nyu', listener2);
 
 console.log(emitter);
 
 console.log('The knight said Nyu!!!');
+
+emitter.emit('nyu');
 
