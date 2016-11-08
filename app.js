@@ -1,22 +1,13 @@
-var EventEmitter = require('./EventEmitter');
-var emitter = new EventEmitter();
-
-console.log(emitter);
-
-var listener1 = function () {
-    console.log("Someone, somewhere said Nyu");
+var person = {
+    firstName: '',
+    lastName: '',
+    greet: function () {
+        return 'Hello ' + this.firstName + ' ' + this.lastName;
+    }
 };
 
-function listener2() {
-    console.log("Know your enemy");
-}
+// creates new obj. john,
+// the person obj. is prototype of john.
+var john = Object.create(person);
 
-emitter.on('nyu', listener1);
-emitter.on('nyu', listener2);
-
-console.log(emitter);
-
-console.log('The knight said Nyu!!!');
-
-emitter.emit('nyu');
 
