@@ -1,24 +1,19 @@
-var EventEmitter = require('events');
-var util = require('util');
+'use strict';
+// class is syntactic sugar only.
+class Person {
+    // works like function constructor.
+    constructor(name, id) {
+        this.name = name;
+        this.id = id;
+    }
 
-function Greetr() {
-    // that will resolve the problem with the inherits
-    EventEmitter.call(this);
-    this.greeting = 'Hello you';
+    // Person.prototype.greet = func...
+    greet() {
+        console.error(`greet method  ${this.name} ${this.id}`);
+    }
 }
 
-// all object that created from Greetr will be have all props and methods
-//      from prototype of EventEmitter.
-util.inherits(Greetr, EventEmitter);
+var p = new Person("Avi", 333);
+p.greet();
 
-Greetr.prototype.greet = function () {
-    console.log('Bill said Monica');
-    this.emit('greet');
-};
 
-var greeter = new Greetr();
-greeter.on('greet', function () {
-    console.log("Here's Monica");
-});
-
-greeter.greet();
