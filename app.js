@@ -1,19 +1,8 @@
-'use strict';
-// class is syntactic sugar only.
-class Person {
-    // works like function constructor.
-    constructor(name, id) {
-        this.name = name;
-        this.id = id;
-    }
+var Greetr = require('./greeter');
 
-    // Person.prototype.greet = func...
-    greet() {
-        console.error(`greet method  ${this.name} ${this.id}`);
-    }
-}
+var greetr = new Greetr();
+greetr.on('greet', function (data) {
+    console.log(`someone said: ${data}`);
+});
 
-var p = new Person("Avi", 333);
-p.greet();
-
-
+greetr.greet('Hello 543');
