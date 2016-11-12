@@ -1,14 +1,15 @@
-// file system
 var fs = require('fs');
 
-// This can be useful in setting up an app. fo reading config. file and you need read it before any code can run.
-var greet = fs.readFileSync(__dirname + '/greet.txt', 'utf8');
-console.log(greet);
-console.log('finish');
+var readable = fs.createReadStream(__dirname + '/greet.txt',
+    {
+        encoding: 'utf8',
+        highWaterMark: 1 * 1024
+    });
 
-var greet2 = fs.readFile(__dirname + '/greet.txt', 'utf8', function (err, data) {
-    console.log(data);
+var writable = fs.createWriteStream(__dirname + '/greetcopy.txt');
+
+readable.on('data', function (chunk) {
+    console.log(chunk);
+    writable.write('\n************ here is new chunk!!! *****************\n');
+    writable.write(chunk);
 });
-
-console.log('finish 2');
-
