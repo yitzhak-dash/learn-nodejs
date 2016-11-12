@@ -7,3 +7,8 @@
 ## (4-06)By Reference and Value.
 ## (4-07)Immediately Invoked Function Expression(IIFE)
 ## (4-11) Module patterns -> the most popular *Revealing module pattern*.
+## (6-1) *Javascript* is synchronous - only one line of code executing at a time. *NodeJS* is asynchronous
+## Binary data ->  0 1 0 1 = (2^3 * 0) +(2^2 * 1) + (2^1 * 0) + (2^0 * 1)   = 0 + 4 + 0 + 1 = 5
+## Characters sets : a representation of  a characters as numbers (Unicode, ascii)
+## Characters encoding : how the characters are storing in binary.
+                    

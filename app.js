@@ -1,8 +1,10 @@
-var Greetr = require('./greeter');
+// that will convert given string to the binary data
+var buf = new Buffer('Hello', 'utf8');
+console.log(buf);
+console.log(buf.toString());
+console.log(buf.toJSON());
+console.log(buf[2]);
 
-var greetr = new Greetr();
-greetr.on('greet', function (data) {
-    console.log(`someone said: ${data}`);
-});
+buf.write('wo');
+console.log(buf.toString());
 
-greetr.greet('Hello 543');
