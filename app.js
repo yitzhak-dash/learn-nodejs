@@ -1,11 +1,14 @@
-// 1 byte = 8 bits.
-var buffer = new ArrayBuffer(/*byteLength:*/ 8);
-// we can store on the buffer/array two 32bit numbers.
-var view = new Int32Array(buffer);
-view[0] = 5;
-view[1] = 15;
+// file system
+var fs = require('fs');
 
-// it doesn't throw exception, but array have 2 places only, so this code doesn't work.
-//view[2] = 30;
-console.log(view);
-console.log(buffer);
+// This can be useful in setting up an app. fo reading config. file and you need read it before any code can run.
+var greet = fs.readFileSync(__dirname + '/greet.txt', 'utf8');
+console.log(greet);
+console.log('finish');
+
+var greet2 = fs.readFile(__dirname + '/greet.txt', 'utf8', function (err, data) {
+    console.log(data);
+});
+
+console.log('finish 2');
+
