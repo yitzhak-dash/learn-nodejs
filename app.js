@@ -1,15 +1,16 @@
 var fs = require('fs');
+var zlib = require('zlib');
 
-var readable = fs.createReadStream(__dirname + '/greet.txt',
-    {
-        encoding: 'utf8',
-        highWaterMark: 1 * 1024
-    });
+var readable = fs.createReadStream(__dirname + '/greet.txt');
 
 var writable = fs.createWriteStream(__dirname + '/greetcopy.txt');
 
-readable.on('data', function (chunk) {
-    console.log(chunk);
-    writable.write('\n************ here is new chunk!!! *****************\n');
-    writable.write(chunk);
-});
+var compressed = fs.createWriteStream(__dirname + '/greet.txt.gz');
+
+// transformed stream(may change the data)
+var gzip = zlib.createGzip();
+
+readable.pipe(writable);
+// we're going from stream to stream to stream
+// 1. read data, 2. compress data, 3. write compressed data
+readable.pipe(gzip).pipe(compressed);
