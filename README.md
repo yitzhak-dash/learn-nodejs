@@ -11,5 +11,7 @@
 ## Binary data ->  0 1 0 1 = (2^3 * 0) +(2^2 * 1) + (2^1 * 0) + (2^0 * 1)   = 0 + 4 + 0 + 1 = 5
 ## Characters sets : a representation of  a characters as numbers (Unicode, ascii)
 ## Characters encoding : how the characters are storing in binary.
-## Pipe: connecting two streams by writing to one stream what is being read from another. 
+## Pipe: connecting two streams by writing to one stream what is being read from another.
+## Protocol: a set of rules two side agree on to use when communicating.
+## TCP/IP - the HTTP, FTP and other protocols define structure of a sending data, the TCP defines how the data will be send.
                     
