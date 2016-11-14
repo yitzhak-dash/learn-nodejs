@@ -14,4 +14,5 @@
 ## Pipe: connecting two streams by writing to one stream what is being read from another.
 ## Protocol: a set of rules two side agree on to use when communicating.
 ## TCP/IP - the HTTP, FTP and other protocols define structure of a sending data, the TCP defines how the data will be send.
+## Use streams whatever you can.
                     
