@@ -19,3 +19,7 @@
 - patch number increment if *some bugs were fixed, code will work fine*
 - minor number was updated if *some new features were added, code will work fine.*
 - major changed *Big changes, code will break(maybe)*
+## use `npm init` to create package.json file
+## use `npm install <package_name> --save-dev` to install development dependencies.
+## use `npm update` to update dependencies.
+## use `npm install nodemon -g` to watch changes

@@ -1,0 +1,25 @@
+{
+  "name": "learn-nodejs",
+  "version": "1.0.0",
+  "description": "Node js test app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yitzhak-dash/learn-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yitzhak-dash/learn-nodejs/issues"
+  },
+  "homepage": "https://github.com/yitzhak-dash/learn-nodejs#readme",
+  "dependencies": {
+    "moment": "^2.16.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
