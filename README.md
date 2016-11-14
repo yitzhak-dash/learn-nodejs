@@ -15,4 +15,7 @@
 ## Protocol: a set of rules two side agree on to use when communicating.
 ## TCP/IP - the HTTP, FTP and other protocols define structure of a sending data, the TCP defines how the data will be send.
 ## Use streams whatever you can.
-                    
+## Semantic Versioning: ([semver.org](semver.org)) version number structure -> major.minor.patch (1.7.3):
+- patch number increment if *some bugs were fixed, code will work fine*
+- minor number was updated if *some new features were added, code will work fine.*
+- major changed *Big changes, code will break(maybe)*
