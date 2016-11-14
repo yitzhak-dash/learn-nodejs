@@ -23,3 +23,5 @@
 ## use `npm install <package_name> --save-dev` to install development dependencies.
 ## use `npm update` to update dependencies.
 ## use `npm install nodemon -g` to watch changes
+## middleware: code that sits between two layers of software(in express between request and response).
+## static files: not processed by code in any way, for example: CSS, HTML...  

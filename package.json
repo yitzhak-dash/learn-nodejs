@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yitzhak-dash/learn-nodejs#readme",
   "dependencies": {
+    "express": "^4.14.0",
     "moment": "^2.16.0"
   },
   "devDependencies": {

@@ -1,20 +1,46 @@
-let http = require('http');
-let fs = require('fs');
+let express = require('express');
+let app = express();
 
-http.createServer(function (req, res) {
-    if (req.url === '/') {
-        fs.createReadStream(__dirname + '/index.html').pipe(res);
-    }
-    else if (req.url === '/api') {
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        let obj = {
-            firstName: 'John',
-            lastName: 'Doe'
-        };
-        res.end(JSON.stringify(obj));
-    }
-    else {
-        res.writeHead(404);
-        res.end();
-    }
-}).listen(1313, '127.0.0.1');
+const port = process.env.PORT || 3000;
+
+// middleware for loading static files
+app.use('/assets', express.static(__dirname + '/public'));
+
+// custom middleware
+app.use('/', function (req, res, next) {
+    console.log(`Request URL: ${req.url}`);
+    next();
+});
+
+app.get('/', function (req, res) {
+    res.send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<h2>{Message}</h2>
+</body>
+</html>`)
+});
+
+app.get('/person/:id', function (req, res) {
+    res.send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<h2>Person: ${req.params.id}</h2>
+</body>
+</html>`)
+});
+
+app.get('/api', function (req, res) {
+    res.json({firstName: 'Joe'});
+});
+
+app.listen(port);
