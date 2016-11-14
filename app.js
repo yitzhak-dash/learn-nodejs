@@ -1,6 +1,9 @@
 let express = require('express');
 let app = express();
 
+let bodyParser = require('body-parser');
+let urlencodedParser = bodyParser.urlencoded({extended: false});
+let jsonParser = bodyParser.json()
 const port = process.env.PORT || 3000;
 
 // middleware for loading static files
@@ -35,8 +38,20 @@ app.get('/person/:id', function (req, res) {
 </head>
 <body>
 <h2>Person: ${req.params.id}</h2>
+<h3>Query string value: ${req.query.qstr}</h3>
 </body>
 </html>`)
+});
+
+// form value.
+app.post('/person', urlencodedParser, function (req, res) {
+    res.send('Thank you');
+    console.log(req.body.firstName);
+});
+
+app.post('/personJson', jsonParser, function (req, res) {
+    res.send('Thank you JSON');
+    console.log(req.body.firstName);
 });
 
 app.get('/api', function (req, res) {
